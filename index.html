@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC College - Official Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #12376b;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .college-name h1 {
+            font-size: 28px;
+        }
+
+        .college-name p {
+            font-size: 13px;
+            color: #dbeafe;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 400px;
+            background:
+                linear-gradient(rgba(10, 35, 75, 0.72),
+                                rgba(10, 35, 75, 0.72)),
+                url("https://images.unsplash.com/photo-1562774053-701939374585?w=1600")
+                center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #12376b;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffbf00;
+        }
+
+        /* General Sections */
+        section {
+            padding: 50px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #12376b;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* Statistics */
+        .stats {
+            background-color: #e7efff;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 30px;
+            color: #12376b;
+        }
+
+        .stat-box p {
+            font-weight: bold;
+        }
+
+        /* Courses */
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card h3 {
+            color: #12376b;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            margin-bottom: 15px;
+        }
+
+        /* Facilities */
+        .facilities {
+            background-color: white;
+        }
+
+        .facility-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .facility {
+            padding: 20px;
+            background-color: #f4f7fb;
+            border-radius: 8px;
+        }
+
+        .facility h3 {
+            color: #12376b;
+            margin-bottom: 8px;
+        }
+
+        /* Admission Banner */
+        .admission {
+            text-align: center;
+            background-color: #12376b;
+            color: white;
+        }
+
+        .admission h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .admission p {
+            margin-bottom: 25px;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b2347;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .course-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .facility-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .course-container,
+            .facility-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="college-name">
+            <h1>ABC College</h1>
+            <p>Knowledge • Excellence • Success</p>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Welcome Banner -->
+    <section class="hero" id="home">
+        <h2>Welcome to ABC College</h2>
+        <p>
+            Empowering students with knowledge, skills, and values
+            to build a brighter future.
+        </p>
+        <a href="#courses" class="btn">Explore Courses</a>
+    </section>
+
+    <!-- About Us -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Our College</h2>
+
+        <p>
+            ABC College is dedicated to academic excellence,
+            innovation, and student development. We provide a
+            supportive learning environment, experienced faculty,
+            and modern facilities to help students achieve their
+            educational and career goals.
+        </p>
+    </section>
+
+    <!-- College Statistics -->
+    <section class="stats">
+        <div class="stat-box">
+            <h3>2000+</h3>
+            <p>Students</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>100+</h3>
+            <p>Faculty Members</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>20+</h3>
+            <p>Courses</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>25+</h3>
+            <p>Years of Excellence</p>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses">
+        <h2 class="section-title">Our Courses</h2>
+
+        <div class="course-container">
+
+            <div class="course-card">
+                <h3>Bachelor of Computer Applications</h3>
+                <p>Learn programming, web development, and computer science.</p>
+                <a href="#contact" class="btn">Enquire Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Bachelor of Business Administration</h3>
+                <p>Develop business, management, and leadership skills.</p>
+                <a href="#contact" class="btn">Enquire Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Bachelor of Commerce</h3>
+                <p>Explore accounting, finance, economics, and business.</p>
+                <a href="#contact" class="btn">Enquire Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Bachelor of Science</h3>
+                <p>Build a strong foundation in scientific principles.</p>
+                <a href="#contact" class="btn">Enquire Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Bachelor of Arts</h3>
+                <p>Explore humanities, languages, and social sciences.</p>
+                <a href="#contact" class="btn">Enquire Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Master of Computer Applications</h3>
+                <p>Advance your knowledge in software and technology.</p>
+                <a href="#contact" class="btn">Enquire Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="facilities" id="facilities">
+        <h2 class="section-title">Our Facilities</h2>
+
+        <div class="facility-container">
+            <div class="facility">
+                <h3>📚 Library</h3>
+                <p>Books, journals, and digital learning resources.</p>
+            </div>
+
+            <div class="facility">
+                <h3>💻 Computer Lab</h3>
+                <p>Modern computers and practical learning facilities.</p>
+            </div>
+
+            <div class="facility">
+                <h3>🏏 Sports</h3>
+                <p>Sports activities for fitness and teamwork.</p>
+            </div>
+
+            <div class="facility">
+                <h3>🚌 Transport</h3>
+                <p>Convenient transport facilities for students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions -->
+    <section class="admission">
+        <h2>Admissions Open!</h2>
+        <p>Take the first step towards your bright future.</p>
+        <a href="#contact" class="btn">Apply for Admission</a>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <p><strong>Address:</strong> College Road, Pune, Maharashtra</p>
+        <p><strong>Email:</strong> info@abccollege.example</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Office Hours:</strong> Monday - Saturday, 9 AM - 5 PM</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ABC College. All rights reserved.</p>
+        <p>Designed using HTML and CSS.</p>
+    </footer>
+
+</body>
+</html>
